@@ -14,8 +14,24 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 # colors
-BLUE='\033[0;34m'
 NC='\033[0m' # No Color
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BROWN='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+LIGHT_GRAY='\033[0;37m'
+DARK_GRAY='\033[1;30m'
+LIGHT_RED='\033[1;31m'
+LIGHT_GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+LIGHT_BLUE='\033[1;34m'
+LIGHT_PURPLE='\033[1;35m'
+LIGHT_CYAN='\033[1;36m'
+WHITE='\033[1;36m'
+
+COLOR="${PURPLE}"
 
 # get terminal dimensions
 columns=$(tput cols)
@@ -91,69 +107,68 @@ if [[ $1 == "dmenu" ]]; then
     exit
 fi
 
-#PS3='Please enter your choice: '
 PS3=$'\e[01;33mChoice: \e[0m' # yellow prompt
 
 select opt in "${options[@]}"
 do
     case $opt in
         "GNU")
-            echo -e "${BLUE}"
+            echo -e "${COLOR}"
             echo -e "${!opt}"
             break
             ;;
         "No_its_linux")
-            echo -e "${BLUE}"
+            echo -e "${COLOR}"
             echo -e "${!opt}"
             break
             ;;
         "Old_Man")
-            echo -e "${BLUE}"
+            echo -e "${COLOR}"
             echo -e "${!opt}"
             break
             ;;
         "Proprietary_Bitch")
-            echo -e "${BLUE}"
+            echo -e "${COLOR}"
             echo -e "${!opt}"
             break
             ;;
         "Ubuntu_kiddie")
-            echo -e "${BLUE}"
+            echo -e "${COLOR}"
             echo -e "${!opt}"
             break
             ;;
         "Installation")
-            echo -e "${BLUE}"
+            echo -e "${COLOR}"
             echo -e "${!opt}"
             break
             ;;
         "Family")
-            echo -e "${BLUE}"
+            echo -e "${COLOR}"
             echo -e "${!opt}"
             break
             ;;
         "Regex")
-            echo -e "${BLUE}"
+            echo -e "${COLOR}"
             echo -e "${!opt}"
             break 
             ;;
         "Defend_Emacs")
-            echo -e "${BLUE}"
+            echo -e "${COLOR}"
             echo -e "${!opt}"
             break
             ;;
         "Stallman_Quote")
-            echo -e "${BLUE}"
+            echo -e "${COLOR}"
             echo -e "${!opt}"
             break
             ;;
         "Windows_Quote")
-            echo -e "${BLUE}"
+            echo -e "${COLOR}"
             echo -e "${!opt}"
             break
             ;;
         "Systemd_Bad")
-            echo -e "${BLUE}"
+            echo -e "${COLOR}"
             echo -e "${!opt}"
             break
             ;;
