@@ -52,104 +52,42 @@ Family="Here's the thing. You said \"Linux is an OS.\" Is it in the same family?
 Family=$(fold -sw $columns <<< $Family)
 
 ### REGEX 
-Regex="Regexing with several editors:
-
-ed:
-
-    ?
-
-    ?
-
-    ?
-
-acme:
-
-    Oh, I want to execute a regular expression on my text here.
-
-    Here I go.
-
-    I take my mouse hand off my keys.
-
-    I move my mouse hand to my mouse
-
-    I grip the mouse with my mouse hand
-
-    I move the mouse to the tab strip on top of the editing buffer
-
-    I click the tab strip
-
-    I release the mouse
-
-    I move my mouse hand to the keys
-
-    I write the regex
-
-    I take my mouse hand off the keys
-
-    I move my mouse hand to my mouse
-
-    I grip the mouse and press da butans
-
-    I drag the mouse over the regex to highlight it
-
-    I release da butans
-
-    I watch as my regex hopefully does what it needs to do on the first try.
-
-    I move the mouse to the editing buffer to continue inputting text
-
-    I release the mouse
-
-    I move my mouse hand to the keys
-
-    I FINALLY start typing again.
-
-Emacs:
-
-    press both foot pedals
-
-    press meta shift control sysrq
-
-    play the moonlight sonata on the two extra keyboards while requesting Regex-Mode with the headstick.
-
-    hit the electric cymbals strapped under my arm and while putting the shift-stick I have gripped tightly with my sphincter into turbo mode.
-
-    signal my two assistants to turn their keys in unison, NOW!
-
-    input the regex
-
-    release all keys and watch as emacs gracefully rearranges the text
-
-vim:
-
-    escape or equivalent
-
-    :%s/foo/bar/g
-
-    enter
-
-    continue editing"
+Regex="Regexing with several editors:\n\ned:\n\n\t?\n\n\t?\n\n\t?\n\nacme:\n\n\tOh, I want to execute a regular expression on my text here.\n\n\tHere I go.\n\n\tI take my mouse hand off my keys.\n\n\tI move my mouse hand to my mouse\n\n\tI grip the mouse with my mouse hand\n\n\tI move the mouse to the tab strip on top of the editing buffer\n\n\tI click the tab strip\n\n\tI release the mouse\n\n\tI move my mouse hand to the keys\n\n\tI write the regex\n\n\tI take my mouse hand off the keys\n\n\tI move my mouse hand to my mouse\n\n\tI grip the mouse and press da butans\n\n\tI drag the mouse over the regex to highlight it\n\n\tI release da butans\n\n\tI watch as my regex hopefully does what it needs to do on the first try.\n\n\tI move the mouse to the editing buffer to continue inputting text\n\n\tI release the mouse\n\n\tI move my mouse hand to the keys\n\n\tI FINALLY start typing again.\n\nEmacs:\n\n\tpress both foot pedals\n\n\tpress meta shift control sysrq\n\n\tplay the moonlight sonata on the two extra keyboards while requesting Regex-Mode with the headstick.\n\n\thit the electric cymbals strapped under my arm and while putting the shift-stick I have gripped tightly with my sphincter into turbo mode.\n\n\tsignal my two assistants to turn their keys in unison, NOW!\n\n\tinput the regex\n\n\trelease all keys and watch as emacs gracefully rearranges the text\n\nvim:\n\n\tescape or equivalent\n\n\t:%s/foo/bar/g\n\n\tenter\n\n\tcontinue editing"
 
 ### EMACS
 Defend_Emacs="Whoa. So, before I 'defend' Emacs, I have to be very careful you know that this is not just a knee-jerk reaction and 'HeY yU iNsUlTeD mAh EmAcS', and that it is not unreasonable to think emacs is outdated. Emacs being outdated is most likely a myth, and that impression will most likely be spread by the fact that many don't use emacs, and never actually get to learn about what it is. It is often compared to text editors, namely Vim, and that is all the more reason it will just look like some old text editor, but it is not that at all. Emacs is not a text editor, emacs contains a text editor. Emacs is more like an example of ancient magic that people once had a hold on and was lost in modern times to some extent. The reason is its a full programming language interpreter with a text editor, at the bare minimum, built on top of it (and to the person who asked why 'nobody builds these things for IDE's', I don't know if that's true, but if there's any truth to it this may be partially why; not every IDE is a programming language, nor does every IDE allow full turing complete modding. Emacs is exceedingly suited for change, even ridiculous change). Better yet, the language it uses is possibly the most dynamic language in the world (lisp), one that allows you to touch and play with the code of the device while its live, and add on to it effortlessly. Hell, a language that allows you to modify the language itself. That is the pinnacle of modding and customization.\n\nAnyways, because of this, its true power is not in its text editor -- many of us forgo the emacs text editing and just integrate vim's text editing into it. It does have a powerful text editor though, I still end up text editing Emacs style more often than Vim style, but anyways -- it is its power as a sort of operating system. You can always build new emacs tools, full programs if you will, and similarly we have continued to build emacs tools over time. You are not using 1970s emacs in 2019, it is still alive and well and extended. Emacs, as it looked when it first came out, was just a starting point, since its not like a normal program which is just a snapshot in time, but a fully organic starting point to grow anything.\n\nIt has some graphical limitations, not in functionality but in pure appearance, which can further give the appearance of being outdated, but none of the practical limitations.\n
 Because of emacs' dynamic language nature, there is another secret gem that might be the true source of its power -- integration. Every tool you add to emacs can often be used in conjunction with every other tool in a very polymorphic way, which means adding features is less like \"emacs + n + m\" and more like \"emacs * n * m\"; every feature boosts every other feature. This has resulted in some tools that are true outliers, with true power that may not be emulated elsewhere, like org mode and magit (please look into magit if you haven't). Emacs can accommodate many workflows, and teach you some newer ones.\n\nAnyways, as for actual emacs users, the number is not insignificant either. It doesn't have a majority usage, but I will usually see it with at least a 5% or 15% in different community interviews (example: https://insights.stackoverflow.com/survey/2016 ~5.2%). Looking at this survey, that puts it on the same usage (about) as PyCharm , VsCode, and PhpStorm, differing by about 2%, and about half the users of Atom, and it has several more users (in this survey sample) than a common editor like TextMate. It is still a common editor, just with an image of being old or unused or uncommon at time, if anything because its old.\n\nJust as a reminder for the 400th time, one of the strangest things about emacs is its called a text editor, and maybe because in the beginning, that's all there were, and that's what its image became cemented as. Emacs is an IDE, a mini operating system, and much more, and never have I gotten as much features elsewhere as I have in emacs (although I do not claim they are not there), and never have I had the combined features you get from the unique combination and integration of all these features within it. From what I've seen, some emacs features are less refined than some other IDE counterparts, others are more refined. Emacs often (not always) requires more tinkering, an IDE less so. I have had times where I was able to use a huge mod pack for emacs 'out the box' like I would an IDE, and other times where it needed some adjusting. I will say its a bit like android vs ios; android if you want to tinker and freedom, ios if you want something that just works and don't want the freedom to break something. I will not be so bold as to say emacs is going to be the universal best for everything, just that its not outdated, and that it is going to have a very long shelf life. I do possible hope to one day, however, work on a new emacs with a makeover and an overhauled branding, as the latter I think is more what emacs is outdated on; its brand. I luv emacs. T-thanks for reading"
 Defend_Emacs=$(fold -sw $columns <<< $Defend_Emacs)
 
+### STALLMAN QUOTE
+Stallman_Quote="To have the choice between proprietary software packages, is being able to choose your master. Freedom means not having a master. And in the area of computing, freedom means not using proprietary software. - Richard Stallman"
+Stallman_Quote=$(fold -sw $columns <<< $Stallman_Quote)
+
+### WINDOWS TORVALDS QUOTE
+Windows_Quote="\"A computer is like air conditioning – it becomes useless when you open Windows. - Linus Torvalds\""
+Windows_Quote=$(fold -sw $columns <<< $Windows_Quote)
+
+### SYSTEMD BAD
+Systemd_Bad="How many times do I have to tell you, simpleton, that systemd is the shittiest init ever? USE A PROPER INIT SYSTEM INSTEAD OF SYSTEMD!\n\nFirst of all,\n\nInit is the first process started during system boot. It is a daemon process that continues running until the system is shut down. Init is the direct or indirect ancestor of all other processes, and automatically adopts all orphaned processes. It is started by the kernel using a hard-coded filename; if the kernel is unable to start it, panic will result. Init is typically assigned process identifier 1.\n\nThe init scripts (aka rc runtime configuration scripts) are launched by the init process to guarantee basic functionality on system start and shutdown. This includes (un)mounting of file systems and launching of daemons. A service manager takes this one step further by providing active control over launched processes, or process supervision. An example is to monitor for crashes and restart processes accordingly.\n\nThese components combine to the init system. Some init systems incorporate the service manager in the init process or have init scripts in close relation to them. Below, such init systems are referred to as integrated, although entries in different categories may explicitly depend on each other.\n\nSecond of all, here's all the disadvantages of systemd:\n\nsystemd suffers from scope creep. And the scope creep leads to vulnerabilities, such as: systemd-resolved DNS cache poisoning [seclists.org] To run systemd properly in container a FUSE LXCFS had to be created, and surely its own share of vulnerabilities: LXCFS before 0.12 does not properly enforce directory escapes [www.cvedetails.com] CVSS 4.6 The do_write_pids function in lxcfs.c in LXCFS before 0.12 does not properly check permissions [www.cvedetails.com] CVSS 7.2 systemd vulnerability allows attackers to hack Linux machines via malicious DNS response [latesthackingnews.com]\n\nsystemd is an init system systemd provides an UEFI boot loader, systemd-boot (previously gummiboot) systemd provides a login manager, systemd-logind systemd provides a syslog daemon, systemd-journald, see Introducing the Journal uses a binary format systemd provides a mount front-end, systemd-mount The udev sources were merged into the systemd source tree systemd provides systemd.timer timer units, which can be used to replace cron and at systemd provides a D-Bus client library, sd-bus (see sd-bus) systemd developed an in-kernel D-Bus implementation, kdbus. 
+They tried to get it merged into the kernel, failed, and are now trying again with BUS1 systemd provides automount via systemd.automount to substitute autofs systemd provides a caching DNS resolver, systemd-resolved systemd provides a network manager and DHCP client, systemd-networkd systemd provides a HTTP server for journal events,systemd-journal-gatewayd (can be disabled with remote compile option) systemd Gains IP Forwarding, IP Masquerading & Basic Firewall Controls fsck cannot be cancelled (used to be possible via C-c or c on the console) systemd defaults to Google's DNS nameservers systemd defaults to Google's NTP servers, which serve leap-smeared time systemd by default uses Predictable Network Interface Names, which are actually less predictable when you only have one interface per type systemd by default kills background processes after the user logs out - \"In my view it was actually quite strange of UNIX that it by default let arbitrary user code stay around unrestricted after logout.\" -Poettering As systemd depends on many files on a rootfs, in case of any problems with rootfs, it is not able to control processes and (cleanly) shutdown/reboot when Crtl-Alt-Del is pressed systemd-resolved breaks the traditional glibc behavior by skipping a DNS server in all following queries, if it does not respond once journal ip anonymization - It's very difficult to use systemd/journal on a privacy-aware system or infrastructure. systemd mounted efivarfs read-write, allowing motherboard bricking via 'rm' systemd has a filename that starts with a hyphen! - This causes all sorts problems as it will usually be interpreted as the start of a command option when used on the command line. You don't even need to specify the filename for it to cause problems as it will affect commands that use globbing. Not to mention that the file in question, \"-.slice\", they refer to as the \"root slice\" which causes confusion as the term \"slice\" has been used for decades as an alternative way of referring to a disk partition yet their usage is completely unrelated.\nLennart's argument for mounting /sys/firmware/efi/efivars as read/write as a default behaviour doesn't hold water. Yes it's true that some tools may need to write to it but those tools are not needed for the general running of a system. efivars should not even be mounted as read-only by default. Those tools that need to write to efivars will generally only be invoked by a system administrator. A competent sysadmin will know how to mount efivars with read/write permissions when they need to to use those tools. The only reason to mount efivars by default is for convenience. This is by no means a good reason. From a security perspective, mounting efivars by default should be strongly discouraged as it breaks the principle of least privilege. Lennart goes on to state that systemd needs to write EFI variables. This demonstrates yet another example of scope creep and thus poor design.
+\n\nTHINGS, SYSTEMD FORCES YOU TO DO:\n\n    systemd is tied to a specific kernel and a specific libc and specific device manager and specific journaling daemon, basically, having systemd means you're locked in to a whole lot of other things\n\n    systemd is renowned for locking up during startup and boot when you have network filesystems\n\n    systemd hardcodes quite a lot of the booting and shutdown process in C which other systems place in easily editable scripts\n\n    systemd in practice requires quite a lot of things: ACLs, PAM, dbus, polkit, these are not hard requirements but without this the above advantages are lost so all distributions enable them at compile time\n\n    logind starting to do retarded shit like user sessions and having retarded power management, in theory you can disable logind, but no distribution again does this\n\n    systemd is very monolithic and comes in one configuration compared to being able to piece your system together yourself, this sounds bad except that unless you run something like Gentoo or Exherbo you were already submitted to this, while the distribution was able to pick the choice of lower level system components before they switched to systemd, you had no choice in this and just used what your distribution stuffed you with. If your distribution used whatever cron daemon, you used that, if your distribution used consolekit1/2 you used that, if your distribution used acpid/Upower, you used that, you used whatever device manager, syslogger, init and RC your distribution used. While systemd replaces all those things and thus leaves the configuration no longer a choice for the distribution, unless you ran a meta distro that allowed you to choose those things you didn't loose much choice now did you?\n\nUhuh, hands down for the best boot analyzer around. \n"
+Systemd_Bad=$(fold -sw $columns <<< $Systemd_Bad)
+
 ######## MENU ##########
 
-options=("GNU" "No_its_linux" "Old_Man" "Proprietary_Bitch" "Ubuntu_kiddie" "Installation" "Family" "Regex" "Defend_Emacs" "Quit")
+options=("GNU" "No_its_linux" "Old_Man" "Proprietary_Bitch" "Ubuntu_kiddie" "Installation" "Family" "Regex" "Defend_Emacs" "Stallman_Quote" "Windows_Quote" "Systemd_Bad" "Quit")
 
-if [ $1 = "-help" ]; then
+if [[ $1 == "-help" ]]; then
     echo "There is no help"
     exit
 fi
 
 ## DMENU ##
 
-if [ $1 = "dmenu" ]; then
+if [[ $1 == "dmenu" ]]; then
     choice=$(printf "%s\n" "${options[@]}" | dmenu )
     echo $choice
-    echo -e ${!choice} | xclip -selection clipboard
+    echo -e ${!choice} | xclip -selection clipboard # copy to clipboard
     exit
 fi
 
@@ -200,6 +138,21 @@ do
             break 
             ;;
         "Defend_Emacs")
+            echo -e "${BLUE}"
+            echo -e "${!opt}"
+            break
+            ;;
+        "Stallman_Quote")
+            echo -e "${BLUE}"
+            echo -e "${!opt}"
+            break
+            ;;
+        "Windows_Quote")
+            echo -e "${BLUE}"
+            echo -e "${!opt}"
+            break
+            ;;
+        "Systemd_Bad")
             echo -e "${BLUE}"
             echo -e "${!opt}"
             break

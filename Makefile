@@ -9,8 +9,8 @@ install:
 	@chmod 755 $(DESTDIR)$(PREFIX)/bin/copypasta
 
 local:
-	@cp -p copypasta /home/fildo/bin/copypasta
-	@chmod 755 /home/fildo/bin/copypasta
+	@cp -p copypasta ~/bin/copypasta
+	@chmod 755 ~/bin/copypasta
 
 uninstall:
 	@rm -rf $(DESTDIR)$(PREFIX)/bin/copypasta
