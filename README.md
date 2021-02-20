@@ -11,5 +11,5 @@ doas make install
 
 ### Features
 
-Run with the dmenu argument to copy to clipboard `copypasta dmenu`
+Run with the dmenu argument to copy to clipboard `copypasta -dmenu`
 

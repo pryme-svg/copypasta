@@ -13,11 +13,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+PS3=$'\e[01;33mChoice: \e[0m' # yellow prompt
 # colors
 NC='\033[0m' # No Color
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 BROWN='\033[0;33m'
+ORANGE='\033[0;33m'
 BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
@@ -31,7 +33,6 @@ LIGHT_PURPLE='\033[1;35m'
 LIGHT_CYAN='\033[1;36m'
 WHITE='\033[1;36m'
 
-COLOR="${PURPLE}"
 
 # get terminal dimensions
 columns=$(tput cols)
@@ -93,89 +94,52 @@ Systemd_Bad=$(fold -sw $columns <<< $Systemd_Bad)
 
 options=("GNU" "No_its_linux" "Old_Man" "Proprietary_Bitch" "Ubuntu_kiddie" "Installation" "Family" "Regex" "Defend_Emacs" "Stallman_Quote" "Windows_Quote" "Systemd_Bad" "Quit")
 
-if [[ $1 == "-help" ]]; then
-    echo "There is no help"
-    exit
-fi
-
-## DMENU ##
-
-if [[ $1 == "dmenu" ]]; then
+show_dmenu() {
     choice=$(printf "%s\n" "${options[@]}" | dmenu )
-    echo $choice
     echo -e ${!choice} | xclip -selection clipboard # copy to clipboard
     exit
-fi
+}
 
-PS3=$'\e[01;33mChoice: \e[0m' # yellow prompt
 
-select opt in "${options[@]}"
-do
-    case $opt in
-        "GNU")
-            echo -e "${COLOR}"
-            echo -e "${!opt}"
-            break
-            ;;
-        "No_its_linux")
-            echo -e "${COLOR}"
-            echo -e "${!opt}"
-            break
-            ;;
-        "Old_Man")
-            echo -e "${COLOR}"
-            echo -e "${!opt}"
-            break
-            ;;
-        "Proprietary_Bitch")
-            echo -e "${COLOR}"
-            echo -e "${!opt}"
-            break
-            ;;
-        "Ubuntu_kiddie")
-            echo -e "${COLOR}"
-            echo -e "${!opt}"
-            break
-            ;;
-        "Installation")
-            echo -e "${COLOR}"
-            echo -e "${!opt}"
-            break
-            ;;
-        "Family")
-            echo -e "${COLOR}"
-            echo -e "${!opt}"
-            break
-            ;;
-        "Regex")
-            echo -e "${COLOR}"
-            echo -e "${!opt}"
-            break 
-            ;;
-        "Defend_Emacs")
-            echo -e "${COLOR}"
-            echo -e "${!opt}"
-            break
-            ;;
-        "Stallman_Quote")
-            echo -e "${COLOR}"
-            echo -e "${!opt}"
-            break
-            ;;
-        "Windows_Quote")
-            echo -e "${COLOR}"
-            echo -e "${!opt}"
-            break
-            ;;
-        "Systemd_Bad")
-            echo -e "${COLOR}"
-            echo -e "${!opt}"
-            break
-            ;;
-        "Quit")
-            break
-            ;;
-        *) echo "invalid option $REPLY";;
-    esac
-done
+show_help() { printf "\
+Usage: copypasta [options]
+
+Options:
+    -help: Show this help
+    -color: Which color the text will show up as
+    -dmenu: Use dmenu to select and copy pastas to clipboard\n"
+exit
+}
+
+
+show_menu() {
+    select opt in "${options[@]}"
+    do
+        if [[ -z $COLOR ]]; then COLOR="PURPLE"; fi
+        echo -e "${!COLOR}"
+        if [ -z "$opt" ]; then echo "Invalid Option"; exit; fi
+        echo -e "${!opt}"
+        break
+    done
+    exit
+}
+
+if [[ -z $1 ]]; then show_menu; fi
+
+case $1 in
+    "-color")
+        COLOR="$(echo "$2" | tr '[:lower:]' '[:upper:]')"
+        show_menu
+        ;;
+    "-help")
+        show_help
+        ;;
+    "-dmenu")
+        show_dmenu
+        ;;
+    *)
+        echo "Invalid Argument"
+        show_help
+        ;;
+esac
 
