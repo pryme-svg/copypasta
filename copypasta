@@ -4,12 +4,12 @@
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
@@ -32,10 +32,12 @@ LIGHT_BLUE='\033[1;34m'
 LIGHT_PURPLE='\033[1;35m'
 LIGHT_CYAN='\033[1;36m'
 WHITE='\033[1;36m'
-
+COLORS=("RED" "GREEN" "BROWN" "ORANGE" "BLUE" "PURPLE" "CYAN" "LIGHT_GRAY" "LIGHT_RED" "LIGHT_GREEN" "YELLOW" "LIGHT_BLUE" "LIGHT_PURPLE" "LIGHT_CYAN" "WHITE")
 
 # get terminal dimensions
 columns=$(tput cols)
+
+separator=$(printf "%${columns}s")
 
 # COPYPASTAS
 
@@ -68,7 +70,7 @@ Installation=$(fold -sw $columns <<< $Installation)
 Family="Here's the thing. You said \"Linux is an OS.\" Is it in the same family? Yes. No one's arguing that. As someone who is a programmer who studies freedom, I am telling you, specifically, in the FSF, no one calls Linux an OS. If you want to be \"specific\" like you said, then you shouldn't either. They're not the same thing. If you're saying \"operating system\" you're referring to the full OS as defined by POSIX, which includes things from corelibs to shell utilities to vital system components. So your reasoning for calling Linux an OS is because random people \"call their free systems Linux?\" Let's get FreeBSD and Haiku in there, then, too. Also, calling someone a human or an ape? It's not one or the other, that's not how taxonomy works. They're both. Linux is Linux and a free component of a fully functioning GNU system. But that's not what you said. You said Linux is an OS, which is not true unless you're okay with calling all members of the kernel family OSes, which means you'd call XNU, BSD, and other kernels OSes, too. Which you said you don't. It's okay to just admit you're wrong, you know?"
 Family=$(fold -sw $columns <<< $Family)
 
-### REGEX 
+### REGEX
 Regex="Regexing with several editors:\n\ned:\n\n\t?\n\n\t?\n\n\t?\n\nacme:\n\n\tOh, I want to execute a regular expression on my text here.\n\n\tHere I go.\n\n\tI take my mouse hand off my keys.\n\n\tI move my mouse hand to my mouse\n\n\tI grip the mouse with my mouse hand\n\n\tI move the mouse to the tab strip on top of the editing buffer\n\n\tI click the tab strip\n\n\tI release the mouse\n\n\tI move my mouse hand to the keys\n\n\tI write the regex\n\n\tI take my mouse hand off the keys\n\n\tI move my mouse hand to my mouse\n\n\tI grip the mouse and press da butans\n\n\tI drag the mouse over the regex to highlight it\n\n\tI release da butans\n\n\tI watch as my regex hopefully does what it needs to do on the first try.\n\n\tI move the mouse to the editing buffer to continue inputting text\n\n\tI release the mouse\n\n\tI move my mouse hand to the keys\n\n\tI FINALLY start typing again.\n\nEmacs:\n\n\tpress both foot pedals\n\n\tpress meta shift control sysrq\n\n\tplay the moonlight sonata on the two extra keyboards while requesting Regex-Mode with the headstick.\n\n\thit the electric cymbals strapped under my arm and while putting the shift-stick I have gripped tightly with my sphincter into turbo mode.\n\n\tsignal my two assistants to turn their keys in unison, NOW!\n\n\tinput the regex\n\n\trelease all keys and watch as emacs gracefully rearranges the text\n\nvim:\n\n\tescape or equivalent\n\n\t:%s/foo/bar/g\n\n\tenter\n\n\tcontinue editing"
 
 ### EMACS
@@ -85,14 +87,14 @@ Windows_Quote="\"A computer is like air conditioning – it becomes useless when
 Windows_Quote=$(fold -sw $columns <<< $Windows_Quote)
 
 ### SYSTEMD BAD
-Systemd_Bad="How many times do I have to tell you, simpleton, that systemd is the shittiest init ever? USE A PROPER INIT SYSTEM INSTEAD OF SYSTEMD!\n\nFirst of all,\n\nInit is the first process started during system boot. It is a daemon process that continues running until the system is shut down. Init is the direct or indirect ancestor of all other processes, and automatically adopts all orphaned processes. It is started by the kernel using a hard-coded filename; if the kernel is unable to start it, panic will result. Init is typically assigned process identifier 1.\n\nThe init scripts (aka rc runtime configuration scripts) are launched by the init process to guarantee basic functionality on system start and shutdown. This includes (un)mounting of file systems and launching of daemons. A service manager takes this one step further by providing active control over launched processes, or process supervision. An example is to monitor for crashes and restart processes accordingly.\n\nThese components combine to the init system. Some init systems incorporate the service manager in the init process or have init scripts in close relation to them. Below, such init systems are referred to as integrated, although entries in different categories may explicitly depend on each other.\n\nSecond of all, here's all the disadvantages of systemd:\n\nsystemd suffers from scope creep. And the scope creep leads to vulnerabilities, such as: systemd-resolved DNS cache poisoning [seclists.org] To run systemd properly in container a FUSE LXCFS had to be created, and surely its own share of vulnerabilities: LXCFS before 0.12 does not properly enforce directory escapes [www.cvedetails.com] CVSS 4.6 The do_write_pids function in lxcfs.c in LXCFS before 0.12 does not properly check permissions [www.cvedetails.com] CVSS 7.2 systemd vulnerability allows attackers to hack Linux machines via malicious DNS response [latesthackingnews.com]\n\nsystemd is an init system systemd provides an UEFI boot loader, systemd-boot (previously gummiboot) systemd provides a login manager, systemd-logind systemd provides a syslog daemon, systemd-journald, see Introducing the Journal uses a binary format systemd provides a mount front-end, systemd-mount The udev sources were merged into the systemd source tree systemd provides systemd.timer timer units, which can be used to replace cron and at systemd provides a D-Bus client library, sd-bus (see sd-bus) systemd developed an in-kernel D-Bus implementation, kdbus. 
+Systemd_Bad="How many times do I have to tell you, simpleton, that systemd is the shittiest init ever? USE A PROPER INIT SYSTEM INSTEAD OF SYSTEMD!\n\nFirst of all,\n\nInit is the first process started during system boot. It is a daemon process that continues running until the system is shut down. Init is the direct or indirect ancestor of all other processes, and automatically adopts all orphaned processes. It is started by the kernel using a hard-coded filename; if the kernel is unable to start it, panic will result. Init is typically assigned process identifier 1.\n\nThe init scripts (aka rc runtime configuration scripts) are launched by the init process to guarantee basic functionality on system start and shutdown. This includes (un)mounting of file systems and launching of daemons. A service manager takes this one step further by providing active control over launched processes, or process supervision. An example is to monitor for crashes and restart processes accordingly.\n\nThese components combine to the init system. Some init systems incorporate the service manager in the init process or have init scripts in close relation to them. Below, such init systems are referred to as integrated, although entries in different categories may explicitly depend on each other.\n\nSecond of all, here's all the disadvantages of systemd:\n\nsystemd suffers from scope creep. And the scope creep leads to vulnerabilities, such as: systemd-resolved DNS cache poisoning [seclists.org] To run systemd properly in container a FUSE LXCFS had to be created, and surely its own share of vulnerabilities: LXCFS before 0.12 does not properly enforce directory escapes [www.cvedetails.com] CVSS 4.6 The do_write_pids function in lxcfs.c in LXCFS before 0.12 does not properly check permissions [www.cvedetails.com] CVSS 7.2 systemd vulnerability allows attackers to hack Linux machines via malicious DNS response [latesthackingnews.com]\n\nsystemd is an init system systemd provides an UEFI boot loader, systemd-boot (previously gummiboot) systemd provides a login manager, systemd-logind systemd provides a syslog daemon, systemd-journald, see Introducing the Journal uses a binary format systemd provides a mount front-end, systemd-mount The udev sources were merged into the systemd source tree systemd provides systemd.timer timer units, which can be used to replace cron and at systemd provides a D-Bus client library, sd-bus (see sd-bus) systemd developed an in-kernel D-Bus implementation, kdbus.
 They tried to get it merged into the kernel, failed, and are now trying again with BUS1 systemd provides automount via systemd.automount to substitute autofs systemd provides a caching DNS resolver, systemd-resolved systemd provides a network manager and DHCP client, systemd-networkd systemd provides a HTTP server for journal events,systemd-journal-gatewayd (can be disabled with remote compile option) systemd Gains IP Forwarding, IP Masquerading & Basic Firewall Controls fsck cannot be cancelled (used to be possible via C-c or c on the console) systemd defaults to Google's DNS nameservers systemd defaults to Google's NTP servers, which serve leap-smeared time systemd by default uses Predictable Network Interface Names, which are actually less predictable when you only have one interface per type systemd by default kills background processes after the user logs out - \"In my view it was actually quite strange of UNIX that it by default let arbitrary user code stay around unrestricted after logout.\" -Poettering As systemd depends on many files on a rootfs, in case of any problems with rootfs, it is not able to control processes and (cleanly) shutdown/reboot when Crtl-Alt-Del is pressed systemd-resolved breaks the traditional glibc behavior by skipping a DNS server in all following queries, if it does not respond once journal ip anonymization - It's very difficult to use systemd/journal on a privacy-aware system or infrastructure. systemd mounted efivarfs read-write, allowing motherboard bricking via 'rm' systemd has a filename that starts with a hyphen! - This causes all sorts problems as it will usually be interpreted as the start of a command option when used on the command line. You don't even need to specify the filename for it to cause problems as it will affect commands that use globbing. Not to mention that the file in question, \"-.slice\", they refer to as the \"root slice\" which causes confusion as the term \"slice\" has been used for decades as an alternative way of referring to a disk partition yet their usage is completely unrelated.\nLennart's argument for mounting /sys/firmware/efi/efivars as read/write as a default behaviour doesn't hold water. Yes it's true that some tools may need to write to it but those tools are not needed for the general running of a system. efivars should not even be mounted as read-only by default. Those tools that need to write to efivars will generally only be invoked by a system administrator. A competent sysadmin will know how to mount efivars with read/write permissions when they need to to use those tools. The only reason to mount efivars by default is for convenience. This is by no means a good reason. From a security perspective, mounting efivars by default should be strongly discouraged as it breaks the principle of least privilege. Lennart goes on to state that systemd needs to write EFI variables. This demonstrates yet another example of scope creep and thus poor design.
 \n\nTHINGS, SYSTEMD FORCES YOU TO DO:\n\n    systemd is tied to a specific kernel and a specific libc and specific device manager and specific journaling daemon, basically, having systemd means you're locked in to a whole lot of other things\n\n    systemd is renowned for locking up during startup and boot when you have network filesystems\n\n    systemd hardcodes quite a lot of the booting and shutdown process in C which other systems place in easily editable scripts\n\n    systemd in practice requires quite a lot of things: ACLs, PAM, dbus, polkit, these are not hard requirements but without this the above advantages are lost so all distributions enable them at compile time\n\n    logind starting to do retarded shit like user sessions and having retarded power management, in theory you can disable logind, but no distribution again does this\n\n    systemd is very monolithic and comes in one configuration compared to being able to piece your system together yourself, this sounds bad except that unless you run something like Gentoo or Exherbo you were already submitted to this, while the distribution was able to pick the choice of lower level system components before they switched to systemd, you had no choice in this and just used what your distribution stuffed you with. If your distribution used whatever cron daemon, you used that, if your distribution used consolekit1/2 you used that, if your distribution used acpid/Upower, you used that, you used whatever device manager, syslogger, init and RC your distribution used. While systemd replaces all those things and thus leaves the configuration no longer a choice for the distribution, unless you ran a meta distro that allowed you to choose those things you didn't loose much choice now did you?\n\nUhuh, hands down for the best boot analyzer around. \n"
 Systemd_Bad=$(fold -sw $columns <<< $Systemd_Bad)
 
 ######## MENU ##########
 
-options=("GNU" "No_its_linux" "Old_Man" "Proprietary_Bitch" "Ubuntu_kiddie" "Installation" "Family" "Regex" "Defend_Emacs" "Stallman_Quote" "Windows_Quote" "Systemd_Bad" "Quit")
+options=("GNU" "No_its_linux" "Old_Man" "Proprietary_Bitch" "Ubuntu_kiddie" "Installation" "Family" "Regex" "Defend_Emacs" "Stallman_Quote" "Windows_Quote" "Systemd_Bad")
 
 show_dmenu() {
     choice=$(printf "%s\n" "${options[@]}" | dmenu )
@@ -101,14 +103,20 @@ show_dmenu() {
 }
 
 
-show_help() { printf "\
+show_help() {
+    if [[ -z $COLOR ]]; then COLOR="PURPLE"; fi
+    echo -e "${!COLOR}"
+    printf "\
 Usage: copypasta [options]
 
 Options:
     -help: Show this help
     -color: Which color the text will show up as
-    -dmenu: Use dmenu to select and copy pastas to clipboard\n"
-exit
+    -dmenu: Use dmenu to select and copy pastas to clipboard
+    -show-all: Show all copypastas
+
+"
+    exit
 }
 
 
@@ -124,22 +132,44 @@ show_menu() {
     exit
 }
 
+show_all() {
+    for opt in "${options[@]}"
+    do
+        echo -e "\t \e[4m${opt}\e[0m"
+        color=${COLORS[$RANDOM % ${#COLORS[@]} ]}
+        echo -e "${!color}"
+        echo -e "${!opt}"
+        echo -e "${NC}${separator// /=}"
+    done
+    exit
+}
+
 if [[ -z $1 ]]; then show_menu; fi
 
-case $1 in
-    "-color")
-        COLOR="$(echo "$2" | tr '[:lower:]' '[:upper:]')"
-        show_menu
-        ;;
-    "-help")
-        show_help
-        ;;
-    "-dmenu")
-        show_dmenu
-        ;;
-    *)
-        echo "Invalid Argument"
-        show_help
-        ;;
-esac
+while [[ "$1" ]]; do
+    case $1 in
+        "-color")
+            COLOR="$(echo "$2" | tr '[:lower:]' '[:upper:]')"
+            shift
+            ;;
+        "-show-all")
+            show_all
+            ;;
+        "-help" | "-h")
+            show_help
+            ;;
+        "-dmenu")
+            show_dmenu
+            ;;
+        *)
+            echo "Invalid Argument"
+            show_help
+            ;;
+    esac
+    shift
+done
+
+show_menu
+
+# vim:nowrap
 
