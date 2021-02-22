@@ -10,6 +10,8 @@ install:
 
 local:
 	@cp -p copypasta ~/bin/copypasta
+	@mkdir -p ~/.local/share/copypasta
+	@cp -p pastas.csv ~/.local/share/copypasta
 	@chmod 755 ~/bin/copypasta
 
 uninstall:
