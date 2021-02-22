@@ -6,6 +6,8 @@ all:
 install:
 	@mkdir -p $(DESTDIR)$(PREFIX)/bin
 	@cp -p copypasta $(DESTDIR)$(PREFIX)/bin/copypasta
+	@mkdir -p $(DESTDIR)$(PREFIX)/local/share/copypasta
+	@cp -p pastas.csv $(DESTDIR)$(PREFIX)/local/share/copypasta
 	@chmod 755 $(DESTDIR)$(PREFIX)/bin/copypasta
 
 local:
@@ -16,3 +18,4 @@ local:
 
 uninstall:
 	@rm -rf $(DESTDIR)$(PREFIX)/bin/copypasta
+	@rm -rf $(DESTDIR)$(PREFIX)/local/share/copypasta
